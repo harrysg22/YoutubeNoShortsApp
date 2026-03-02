@@ -1,0 +1,35 @@
+# XcodeGen project spec - run `xcodegen generate` to create the Xcode project
+# Install: brew install xcodegen
+
+name: YouTubeNoShortsApp
+options:
+  bundleIdPrefix: com.youtubenoshorts
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+  createIntermediateGroups: true
+
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.youtubenoshorts.app
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+
+targets:
+  YouTubeNoShortsApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: YouTubeNoShortsApp
+        type: group
+    settings:
+      base:
+        INFOPLIST_FILE: YouTubeNoShortsApp/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    dependencies: []
