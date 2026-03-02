@@ -21,3 +21,6 @@ Package.resolved
 Pods/
 *.xcworkspace
 !default.xcworkspace
+
+# Config local (Team ID, secrets)
+Config/Development.xcconfig

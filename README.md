@@ -14,8 +14,13 @@ An iPhone app that lets you use YouTube normally—log in, browse, search, watch
 
 ## Building
 
-1. Open `YouTubeNoShortsApp.xcodeproj` in Xcode
-2. Select your development team in **Signing & Capabilities**
+1. **First-time setup:** Copy the config template and add your Apple Developer Team ID:
+   ```bash
+   cp Config/Development.xcconfig.example Config/Development.xcconfig
+   ```
+   Edit `Config/Development.xcconfig` and replace `YOUR_TEAM_ID_HERE` with your Team ID (from [developer.apple.com/account](https://developer.apple.com/account) → Membership).
+
+2. Open `YouTubeNoShortsApp.xcodeproj` in Xcode
 3. Choose your device or simulator
 4. Press **Run** (⌘R)
 
