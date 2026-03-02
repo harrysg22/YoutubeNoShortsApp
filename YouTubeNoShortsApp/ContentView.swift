@@ -13,7 +13,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             YouTubeWebView(isLoading: $isLoading)
-                .ignoresSafeArea(.all)
             
             if isLoading {
                 ProgressView("Loading YouTube…")
