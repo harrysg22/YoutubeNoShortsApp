@@ -2,7 +2,7 @@
 //  YouTubeNavigationDelegate.swift
 //  YouTube No Shorts
 //
-//  Intercepts navigation to block Shorts URLs
+//  Intercepts navigation to block Shorts URLs and automatic watch-page navigation
 //
 
 import WebKit
@@ -23,6 +23,14 @@ final class YouTubeNavigationDelegate: NSObject, WKNavigationDelegate {
         }
         
         let path = url.path
+        
+        // Block automatic navigation to watch page (e.g. when pausing scroll on a video).
+        // Only allow when user explicitly tapped a link.
+        if path.contains("/watch") && navigationAction.navigationType != .linkActivated {
+            decisionHandler(.cancel)
+            return
+        }
+        
         let isShortsFeed = path.contains("/feed/shorts")
         let isShortsVideo = path.contains("/shorts/")
         
